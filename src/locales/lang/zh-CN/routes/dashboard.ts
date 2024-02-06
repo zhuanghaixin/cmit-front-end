@@ -6,4 +6,5 @@ export default {
   testnav: '测试组件',
   vue_grid_layout: 'Vue.js的栅格布局系统',
   notice_carousel: '通知走马灯',
+  template_1: 'ts setup 代码模版',
 }
