@@ -45,6 +45,16 @@ const testnav: AppRouteModule = {
         hideMenu: false,
       },
     },
+    {
+      path: 'demo_1',
+      name: 'Demo_1',
+      component: () => import('/@/views/testnav/demo/Demo_1.vue'),
+      meta: {
+        title: t('routes.dashboard.demo_1'),
+        icon: 'simple-icons:about-dot-me',
+        hideMenu: false,
+      },
+    },
   ],
 }
 

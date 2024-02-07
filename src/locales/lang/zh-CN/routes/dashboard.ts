@@ -7,4 +7,5 @@ export default {
   vue_grid_layout: 'Vue.js的栅格布局系统',
   notice_carousel: '通知走马灯',
   template_1: 'ts setup 代码模版',
+  demo_1:'Demo_1'
 }
