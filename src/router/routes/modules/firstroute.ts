@@ -46,6 +46,16 @@ const testnav: AppRouteModule = {
       },
     },
     {
+      path: 'demo_1',
+      name: 'Demo_1',
+      component: () => import('/@/views/testnav/demo/Demo_1.vue'),
+      meta: {
+        title: t('routes.dashboard.demo_1'),
+        icon: 'simple-icons:about-dot-me',
+        hideMenu: false,
+      },
+    },
+    {
       path: 'chart',
       name: 'Chart_Demo',
       component: () => import('/@/views/testnav/chart/ChartDemo.vue'),
