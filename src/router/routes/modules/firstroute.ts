@@ -46,11 +46,31 @@ const testnav: AppRouteModule = {
       },
     },
     {
-      path: 'demo_1',
-      name: 'Demo_1',
-      component: () => import('/@/views/testnav/demo/Demo_1.vue'),
+      path: 'chart',
+      name: 'Chart_Demo',
+      component: () => import('/@/views/testnav/chart/ChartDemo.vue'),
       meta: {
-        title: t('routes.dashboard.demo_1'),
+        title: t('routes.dashboard.chart_demo'),
+        icon: 'simple-icons:about-dot-me',
+        hideMenu: false,
+      },
+    },
+    {
+      path: 'list',
+      name: 'List_Demo',
+      component: () => import('/@/views/testnav/list/ListDemo.vue'),
+      meta: {
+        title: t('routes.dashboard.list_demo'),
+        icon: 'simple-icons:about-dot-me',
+        hideMenu: false,
+      },
+    },
+    {
+      path: 'list_1',
+      name: 'List_Demo_1',
+      component: () => import('/@/views/testnav/list/ListDemo1.vue'),
+      meta: {
+        title: t('routes.dashboard.list_demo_1'),
         icon: 'simple-icons:about-dot-me',
         hideMenu: false,
       },

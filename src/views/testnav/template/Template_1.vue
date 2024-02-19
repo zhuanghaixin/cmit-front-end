@@ -10,9 +10,7 @@
         <img src="/@/assets/images/logo.png" class="w-10 h-10" />
       </div>
       <div class="bg-blue-300 truncate mr-5">
-        <a
-          >大索的舒适度绝对是来看教练空间朗多的飞机啊师傅来就是独立空间的师傅教练的送机法律框架吉卡德罗夫教练肯定是教练看到送机弗兰克但是每次离开都是美女发来肯德基师傅离开的师傅们都开始教练看</a
-        >
+        <a>大索的舒适度绝对是来看教练空间朗多的飞机啊师傅来就是独立空间的师傅教练的送机法律框架吉卡德罗夫教练肯定是教练看到送机弗兰克但是每次离开都是美女发来肯德基师傅离开的师傅们都开始教练看</a>
       </div>
       <div class="bg-yellow-300 col-span-full">3</div>
     </div>
@@ -27,20 +25,20 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue'
-  // import { CommonObj } from '/@/types/index'
-  import MobileNoticeItem from './components/MobileNoticeItem.vue'
-  const dataRef = ref<any>([])
-  dataRef.value = [
-    {
-      id: 1,
-      name: 'zbx',
-    },
-    {
-      id: 2,
-      name: 'ljl',
-    },
-  ]
+import { ref } from 'vue'
+import { CommonObj } from '/@/types/index'
+import MobileNoticeItem from './components/MobileNoticeItem.vue'
+const dataRef = ref<CommonObj>([])
+dataRef.value = [
+  {
+    id: 1,
+    name: 'zbx',
+  },
+  {
+    id: 2,
+    name: 'ljl',
+  },
+]
 </script>
 
 <style scoped></style>

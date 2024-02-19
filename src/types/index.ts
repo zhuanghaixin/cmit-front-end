@@ -2,4 +2,6 @@ interface CommonObj {
   [key: string]: any
 }
 
-export { CommonObj }
+var a={'name':1}
+
+export { CommonObj,a }

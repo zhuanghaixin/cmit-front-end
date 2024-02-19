@@ -6,21 +6,26 @@
 </template>
 
 <script setup lang="ts">
-import { type CommonObj } from '../../../../types/index'
-import { PropType } from 'vue'
-const props = defineProps({
-  dataRef: {
-    type: Object as PropType<CommonObj>,
-    default: () => [1, 2, 3]
-  }
-})
+import { type CommonObj, a } from '../../../../types/index'
 
 // const props = defineProps({
 //   dataRef: {
-//     type: Object,
-//     default: () => { },
-//   },
+//     type: Array,
+//     default: () => [1, 2, 3]
+//   }
 // })
+// console.log('a', a)
+
+// var b: CommonObj = {
+//   123: 1
+// }
+// console.log('b', b)
+const props = defineProps({
+  dataRef: {
+    type: Object as PropType<CommonObj>,
+    default: () => { },
+  },
+})
 console.log('props', props)
 </script>
 
