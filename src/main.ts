@@ -13,6 +13,7 @@ import { setupStore } from '/@/store'
 import { setupGlobDirectives } from '/@/directives'
 import { setupI18n } from '/@/locales/setupI18n'
 import { registerGlobComp } from '/@/components/registerGlobComp'
+import _ from 'lodash-es'; // 引入lodash
 
 import { isDevMode } from './utils/env'
 
@@ -57,7 +58,7 @@ async function bootstrap() {
 
   // https://next.router.vuejs.org/api/#isready
   // await router.isReady();
-
+  app.config.globalProperties._ = _;
   app.mount('#app')
 }
 

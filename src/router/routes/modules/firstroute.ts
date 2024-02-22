@@ -85,6 +85,26 @@ const testnav: AppRouteModule = {
         hideMenu: false,
       },
     },
+    {
+      path: 'form_1',
+      name: 'Form_Demo_1',
+      component: () => import('/@/views/testnav/form/FormDemo1.vue'),
+      meta: {
+        title: t('routes.dashboard.form_demo_1'),
+        icon: 'simple-icons:about-dot-me',
+        hideMenu: false,
+      },
+    },
+    {
+      path: 'form_2',
+      name: 'Form_Demo_2',
+      component: () => import('/@/views/testnav/form/FormDemo2.vue'),
+      meta: {
+        title: t('routes.dashboard.form_demo_2'),
+        icon: 'simple-icons:about-dot-me',
+        hideMenu: false,
+      },
+    },
   ],
 }
 

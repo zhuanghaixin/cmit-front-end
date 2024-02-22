@@ -10,5 +10,7 @@ export default {
   demo_1: 'Demo 1',
   chart_demo: '图表',
   list_demo: '列表',
-  list_demo_1: '列表',
+  list_demo_1: '列表1',
+  form_demo_1:'表单1',
+  form_demo_2:'表单2'
 }

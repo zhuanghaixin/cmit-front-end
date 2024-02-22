@@ -14,13 +14,69 @@
       </div>
       <div class="bg-yellow-300 col-span-full">3</div>
     </div>
-
     <div class="flex flex-row bg-gray mb-2 h-[5rem] w-full">
       <div class="basis-17 flex-grow-0 flex-shrink-0 bg-red-500">121323</div>
-      <div class="bg-green-500 w-full">
-        <div class="bg-blue-200 mr-10">eeee</div>
-      </div>
+      <!-- <a-carousel :dot="false" dosClass="notice-dots-class" :touchMove="true">
+        <div class="bg-green-500 w-70 flex flex-col">
+          <div class="bg-blue-200 flex items-center flex-grow">
+            <a-avatar :src="'/@/assets/notice.7c39ec99.png'"></a-avatar>
+            <div class="truncate">
+              <a class="text-color=[#000]">关于2024年1月27日凌晨0点-3点照片得到的</a>
+            </div>
+          </div>
+          <div class="flex-grow flex items-center">2023.2.1</div>
+        </div>
+        <div class="bg-green-500 w-70 flex flex-col">
+          <div class="bg-blue-200 flex items-center flex-grow">
+            <a-avatar :src="'/@/assets/notice.7c39ec99.png'"></a-avatar>
+            <div class="truncate">
+              <a class="text-color=[#000]">关于2024年1月28日凌晨0点-3点照片得到的</a>
+            </div>
+          </div>
+          <div class="flex-grow flex items-center">2023.2.1</div>
+        </div>
+        <div class="bg-green-500 w-70 flex flex-col">
+          <div class="bg-blue-200 flex items-center flex-grow">
+            <a-avatar :src="'/@/assets/notice.7c39ec99.png'"></a-avatar>
+            <div class="truncate">
+              <a class="text-color=[#000]">关于2024年1月29日凌晨0点-3点照片得到的</a>
+            </div>
+          </div>
+          <div class="flex-grow flex items-center">2023.2.1</div>
+        </div>
+      </a-carousel> -->
     </div>
+    <a-carousel :dot="false" dosClass="notice-dots-class" :touchMove="true">
+      <div class="bg-green-500 w-70 flex flex-col h-[4.36rem]">
+        <div class="h-1/2 bg-blue-200 flex items-center flex-grow">
+          <div class="ml-3">
+            <a-avatar :src="'/@/assets/notice.7c39ec99.png'"></a-avatar>
+          </div>
+          <div class="truncate">
+            <a class="text-color=[#000]">关于2024年1月27日凌晨0点-3点照片得到的</a>
+          </div>
+        </div>
+        <div class="h-1/2 flex-grow flex items-center">2023.2.1</div>
+      </div>
+      <div class="bg-green-500 w-70 flex flex-col">
+        <div class="h-1/2 bg-blue-200 flex items-center flex-grow">
+          <a-avatar :src="'/@/assets/notice.7c39ec99.png'"></a-avatar>
+          <div class="truncate">
+            <a class="text-color=[#000]">关于2024年1月28日凌晨0点-3点照片得到的</a>
+          </div>
+        </div>
+        <div class="h-1/2 flex-grow flex items-center">2023.2.2</div>
+      </div>
+      <div class="bg-green-500 w-70 flex flex-col">
+        <div class="h-1/2 bg-blue-200 flex items-center flex-grow">
+          <a-avatar :src="'/@/assets/notice.7c39ec99.png'"></a-avatar>
+          <div class="truncate">
+            <a class="text-color=[#000]">关于2024年1月29日凌晨0点-3点照片得到的</a>
+          </div>
+        </div>
+        <div class="h-1/2 flex-grow flex items-center">2023.2.3</div>
+      </div>
+    </a-carousel>
   </div>
 </template>
 
@@ -41,4 +97,17 @@ dataRef.value = [
 ]
 </script>
 
-<style scoped></style>
+<style scoped>
+/* For demo */
+:deep(.slick-slide) {
+  text-align: center;
+  height: 4.36rem;
+  line-height: 4.36rem;
+  background: #364d79;
+  overflow: hidden;
+}
+
+:deep(.slick-slide h3) {
+  color: #fff;
+}
+</style>

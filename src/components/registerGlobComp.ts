@@ -9,6 +9,7 @@ import 'ant-design-vue/dist/antd.css';
 import Antd from "ant-design-vue";
 
 
+
 export function registerGlobComp(app: App) {
   app.use(Input).use(Button).use(Layout);
   app.use(VXETable);
