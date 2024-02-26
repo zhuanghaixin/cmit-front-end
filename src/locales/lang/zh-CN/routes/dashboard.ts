@@ -26,5 +26,13 @@ export default {
     "customerForm": "自定义组件",
     "appendForm": "表单增删示例",
     "tabsForm": "标签页+多级field"
+  },
+  "avatar":{
+    "avatar":"头像",
+    "avatar_0":"头像测试页面",
+    "avatar_1":"头像名称",
+    "avatar_2":"头像名称组合",
+    "avatar_3":"头像名称组合2"
+
   }
 }

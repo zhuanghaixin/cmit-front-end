@@ -16,6 +16,50 @@ const testnav: AppRouteModule = {
   },
   children: [
     {
+      path:'avatar',
+      name:'Avatar_Demo',
+      component: getParentLayout('AvatarsDemo'),
+      meta: {
+        // icon: 'mdi:form-select',
+        title: t('routes.dashboard.avatar.avatar'),
+      },
+      children: [
+        {
+          path: '/testnav/avatar/avatar_demo_0',
+          name: 'Avatar_Demo_0',
+          component: () => import('/@/views/testnav/avatar/index.vue'),
+          meta: {
+            title: t('routes.dashboard.avatar.avatar_0'),
+          },
+        },
+        {
+          path: '/testnav/avatar/avatar_demo_1',
+          name: 'Avatar_Demo_1',
+          component: () => import('/@/views/testnav/avatar/AvatarDemo1.vue'),
+          meta: {
+            title: t('routes.dashboard.avatar.avatar_1'),
+          },
+        },
+        {
+          path: '/testnav/avatar/avatar_demo_2',
+          name: 'Avatar_Demo_2',
+          component: () => import('/@/views/testnav/avatar/AvatarDemo2.vue'),
+          meta: {
+            title: t('routes.dashboard.avatar.avatar_2'),
+          },
+        },
+        {
+          path: '/testnav/avatar/avatar_demo_3',
+          name: 'Avatar_Demo_2',
+          component: () => import('/@/views/testnav/avatar/AvatarDemo3.vue'),
+          meta: {
+            title: t('routes.dashboard.avatar.avatar_3'),
+          },
+        },
+      
+      ],
+    },
+    {
       path: 'vue_grid_layout',
       name: 'VueGridLayout',
       component: () => import('/@/views/testnav/vue_grid_layout/index.vue'),
@@ -197,7 +241,7 @@ const testnav: AppRouteModule = {
         //   },
         // },
       ],
-    }
+    },
   ],
 }
 
