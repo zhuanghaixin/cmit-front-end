@@ -11,6 +11,20 @@ export default {
   chart_demo: '图表',
   list_demo: '列表',
   list_demo_1: '列表1',
+  list_demo_2: '列表骨架屏',
   form_demo_1:'表单1',
-  form_demo_2:'表单2'
+  form_demo_2:'表单2',
+  "hook":{
+    "hook": "Hook",
+    "hook_demo_1": "useDocumentVisible",
+    "basic": "基础表单",
+    "useForm": "useForm",
+    "refForm": "RefForm",
+    "advancedForm": "可收缩表单",
+    "ruleForm": "表单验证",
+    "dynamicForm": "动态表单",
+    "customerForm": "自定义组件",
+    "appendForm": "表单增删示例",
+    "tabsForm": "标签页+多级field"
+  }
 }
