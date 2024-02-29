@@ -160,6 +160,16 @@ const testnav: AppRouteModule = {
       },
     },
     {
+      path: 'form_3',
+      name: 'Form_Demo_3',
+      component: () => import('/@/views/testnav/form/FormDemo3.vue'),
+      meta: {
+        title: t('routes.dashboard.form_demo_3'),
+        icon: 'simple-icons:about-dot-me',
+        hideMenu: false,
+      },
+    },
+    {
       path:'hook',
       name:'Hook_Demo_1',
       component: getParentLayout('HookDemo'),

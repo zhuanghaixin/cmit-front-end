@@ -14,9 +14,10 @@ import { useECharts } from '/@/hooks/web/useECharts';
 const chartRef = ref<HTMLDivElement | null>(null);
 const { setOptions } = useECharts(chartRef as Ref<HTMLDivElement>);
 import { data as demo } from './demo.js'
-
+import echarts from '/@/utils/lib/echarts'
+// let chartInstance: echarts.ECharts
 const option: EChartsOption = {
-  color: ['#87dde1', '#E30022', '#FF4500', '#FFF44F', '#1E90FF'],   // 调色颜色列表
+  color: ['#E30022', '#FF4500', '#FFF44F', '#1E90FF'],   // 调色颜色列表
   // toolbox:{
   //   feature:{
   //     saveAsImage:{}
@@ -30,10 +31,21 @@ const option: EChartsOption = {
     }
   },
   legend: {    // 图例组件  
-    selectedMode: 'single',
+    // selectedMode: 'single',
     right: 10,  // 位置
     top: 0,
-
+    data: [
+      '重大风险单位',
+      '较大风险单位',
+      '一般风险单位',
+      '低风险单位'
+    ],
+    selected: {
+      '重大风险单位': true,
+      '较大风险单位': true,
+      '一般风险单位': true,
+      '低风险单位': true
+    }
   },
   grid: {
     left: '3%',
@@ -68,7 +80,7 @@ const option: EChartsOption = {
       stack: 'total',
       barWidth: 20,
       label: {
-        show: false
+        show: true
       },
       emphasis: {
         focus: 'series'
@@ -81,7 +93,7 @@ const option: EChartsOption = {
       stack: 'total',
       barWidth: 20,
       label: {
-        show: false
+        show: true
       },
       emphasis: {
         focus: 'series'
@@ -94,26 +106,26 @@ const option: EChartsOption = {
       stack: 'total',
       barWidth: 20,
       label: {
-        show: false
+        show: true
       },
       emphasis: {
         focus: 'series'
       },
       data: []
     },
-    {
-      name: '全部',
-      type: 'bar',
-      // stack: 'total',
-      barWidth: 20,
-      label: {
-        show: false
-      },
-      emphasis: {
-        focus: 'series'
-      },
-      data: []
-    },
+    // {
+    //   name: '全部',
+    //   type: 'bar',
+    //   // stack: 'total',
+    //   barWidth: 20,
+    //   label: {
+    //     show: false
+    //   },
+    //   emphasis: {
+    //     focus: 'series'
+    //   },
+    //   data: []
+    // },
     // {
     //   name: '全部',
     //   type: 'bar',
@@ -178,9 +190,17 @@ const init = async () => {
 
     })
   }
+
   enterpriseRiskVO.dataList.forEach((v) => {
     // @ts-ignore
     option.yAxis.data.push(v.businessName)
+
+    // 将各个businessName下的各个风险单位相加
+
+
+
+
+
 
     option.series = (option.series as any[]).map((ele) => {
       if (ele.name == '重大风险单位') {
@@ -200,13 +220,101 @@ const init = async () => {
       }
       return ele
     })
+    const result = {};
+    console.log('option.series', option.series)
+    // sum = arr.reduce((total, currentValue) => total + currentValue);
+    // 遍历数据数组
+    option.series.forEach(item => {
+      const name = item.name;
+      // @ts-ignore
+      const sum = item.data.reduce((acc, currentValue) => acc + parseInt(currentValue), 0);
+
+      // 将name作为键，sum作为值，添加到结果对象中
+      // @ts-ignore
+      result[name] = sum;
+    });
+
+    // @ts-ignore
+    option.legend.formatter = function (name,) {
+      return name + ' ' + result[name]
+    },
+
+      console.log(result);
+
   })
   setOptions(option, false)
+
+
+
+
 }
+
+
+let temp = ''
+
 
 
 onMounted(() => {
   init()
+  // 监听图例点击事件
+
+  let chartInstance: echarts.ECharts
+  chartInstance = echarts.init(chartRef.value)
+  chartInstance.on("legendselectchanged", function (params) {
+    console.log('params', params)
+    var selected = params.name;
+    // 找到选择是否为true
+    var isSelected = params.selected[selected];
+    console.log('isSelect', isSelected)
+    var option = chartInstance.getOption();
+    console.log("option", option);
+    let newSelected = {}
+    // if (isSelected) {
+    if (temp == selected) {
+      let someTrue = Object.values(params.selected).some(value => value === true);
+      console.log('someTrue', someTrue)
+      if (someTrue) {
+        newSelected = Object.assign(
+          {
+            "重大风险单位": false,
+            "较大风险单位": false,
+            "一般风险单位": false,
+            "低风险单位": false,
+          },
+          {
+            [selected]: true,
+          }
+        )
+      } else {
+        newSelected =
+        {
+          "重大风险单位": true,
+          "较大风险单位": true,
+          "一般风险单位": true,
+          "低风险单位": true,
+        }
+      }
+
+
+
+    } else {
+      newSelected = Object.assign(
+        {
+          "重大风险单位": false,
+          "较大风险单位": false,
+          "一般风险单位": false,
+          "低风险单位": false,
+        },
+        {
+          [selected]: true,
+        }
+      )
+    }
+    temp = selected
+    option.legend[0].selected = newSelected;
+    chartInstance.setOption(option);
+  });
+
 })
 </script>
 

@@ -14,6 +14,7 @@ export default {
   list_demo_2: '列表骨架屏',
   form_demo_1:'表单1',
   form_demo_2:'表单2',
+  form_demo_3:'表单3vxe',
   "hook":{
     "hook": "Hook",
     "hook_demo_1": "useDocumentVisible",
