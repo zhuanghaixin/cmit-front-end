@@ -1,7 +1,7 @@
 <template>
   <Row style="height: 100%" :gutter="16">
     <Col :span="24">
-    <div style="width: 100%; height: 100%" ref="chartRef"></div>
+    <div style="width: 100%; height: 100%" ref="chartRef" class="chart-demo"></div>
     </Col>
   </Row>
 </template>
@@ -157,7 +157,7 @@ function fetchData(): Promise<any> {
     setTimeout(() => {
       const data = demo
       resolve(data); // 成功获取数据后，调用 resolve 并传递数据
-    }, 500); // 延迟1秒钟
+    }, 1000); // 延迟1秒钟
   });
 }
 
@@ -254,20 +254,6 @@ const init = async () => {
   })
   setOptions(option, false)
 
-
-
-
-}
-
-
-let temp = ''
-
-
-
-onMounted(() => {
-  init()
-  // 监听图例点击事件
-
   let chartInstance: echarts.ECharts
   chartInstance = echarts.init(chartRef.value)
   chartInstance.on("legendselectchanged", function (params) {
@@ -324,6 +310,22 @@ onMounted(() => {
     option.legend[0].selected = newSelected;
     chartInstance.setOption(option);
   });
+
+
+
+
+}
+
+
+let temp = ''
+
+
+
+onMounted(() => {
+  init()
+  // 监听图例点击事件
+
+
 
 })
 </script>
