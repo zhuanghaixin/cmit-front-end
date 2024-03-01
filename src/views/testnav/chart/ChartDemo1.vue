@@ -15,26 +15,48 @@ const chartRef = ref<HTMLDivElement | null>(null);
 const { setOptions } = useECharts(chartRef as Ref<HTMLDivElement>);
 
 const options: EChartsOption = {
+  color: ['#f00', '#ff0', '#00f'],
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    },
+    // formatter: function (params) {
+    //   console.log('params: ', params)
+    //   let html = '';
+    //   const xAxisValue = params[0].axisValue;
+    //   html += xAxisValue + '<br/>';
+    //   params.forEach(function (item) {
+    //     html += item.marker + item.seriesName + ' : ' + item.data + '<br/>';
+    //   });
+    //   return html;
+    // }
+  },
   xAxis: {
     type: 'category',
-    data: ['Matcha Latte', 'Milk Tea', 'Cheese Cocoa', 'Walnut Brownie']
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   },
-  yAxis: {},
+  yAxis: {
+    type: 'value'
+  },
   series: [
     {
+      name: 'Series 1',
       type: 'bar',
-      name: '2015',
-      data: [89.3, 92.1, 94.4, 85.4]
+      stack: 'total',
+      data: [120, 132, 101, 134, 90, 230, 210]
     },
     {
+      name: 'Series 2',
       type: 'bar',
-      name: '2016',
-      data: [95.8, 89.4, 91.2, 76.9]
+      stack: 'total',
+      data: [220, 182, 191, 234, 290, 330, 310]
     },
     {
+      name: 'Series 3',
       type: 'bar',
-      name: '2017',
-      data: [97.7, 83.1, 92.5, 78.1]
+      stack: 'total',
+      data: [150, 232, 201, 154, 190, 330, 410]
     }
   ]
 };

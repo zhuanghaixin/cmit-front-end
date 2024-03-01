@@ -28,7 +28,17 @@ const option: EChartsOption = {
     axisPointer: {
       // Use axis to trigger tooltip
       type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
-    }
+    },
+    // formatter: function (params) {
+    //   console.log('params', params);
+    //   let html = '';
+    //   const seriesName = params[0].axisValueLabel;
+    //   params.forEach(function (item) {
+    //     html += item.marker + item.seriesName + ' : ' + item.data + '<br/>';
+    //   });
+    //   return seriesName + '<br/>' + html;
+    // }
+
   },
   legend: {    // 图例组件  
     // selectedMode: 'single',
@@ -69,9 +79,9 @@ const option: EChartsOption = {
       label: {
         show: true
       },
-      emphasis: {
-        focus: 'series'
-      },
+      // emphasis: {
+      //   focus: 'series'
+      // },
       data: []
     },
     {
@@ -82,9 +92,9 @@ const option: EChartsOption = {
       label: {
         show: true
       },
-      emphasis: {
-        focus: 'series'
-      },
+      // emphasis: {
+      //   focus: 'series'
+      // },
       data: []
     },
     {
@@ -95,9 +105,9 @@ const option: EChartsOption = {
       label: {
         show: true
       },
-      emphasis: {
-        focus: 'series'
-      },
+      // emphasis: {
+      //   focus: 'series'
+      // },
       data: []
     },
     {
@@ -108,9 +118,9 @@ const option: EChartsOption = {
       label: {
         show: true
       },
-      emphasis: {
-        focus: 'series'
-      },
+      // emphasis: {
+      //   focus: 'series'
+      // },
       data: []
     },
     // {
