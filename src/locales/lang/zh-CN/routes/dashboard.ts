@@ -9,6 +9,7 @@ export default {
   template_1: 'ts setup 代码模版',
   demo_1: 'Demo 1',
   chart_demo: '图表',
+  chart_demo1: '图表demo',
   list_demo: '列表',
   list_demo_1: '列表1',
   list_demo_2: '列表骨架屏',

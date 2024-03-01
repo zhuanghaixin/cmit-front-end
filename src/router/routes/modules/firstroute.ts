@@ -110,6 +110,16 @@ const testnav: AppRouteModule = {
       },
     },
     {
+      path: 'chart_1',
+      name: 'Chart_Demo1',
+      component: () => import('/@/views/testnav/chart/ChartDemo1.vue'),
+      meta: {
+        title: t('routes.dashboard.chart_demo1'),
+        icon: 'simple-icons:about-dot-me',
+        hideMenu: false,
+      },
+    },
+    {
       path: 'list',
       name: 'List_Demo',
       component: () => import('/@/views/testnav/list/ListDemo.vue'),
